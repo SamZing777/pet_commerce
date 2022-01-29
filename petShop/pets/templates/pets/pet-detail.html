@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %}
+	{{ pet.name }} details
+{% endblock %}
+
+
+
+{% block body %}
+	<h2> {{ pet.name }} profile</h2>
+
+	<div class="container">
+		<div class="row">
+			<div class="col col-sm">
+				<ul>
+					<li>Animal: {{ pet.animal.name }}</li>
+					<li>{{ pet.sub_category }}</li>
+					<li>Breed: {{ pet.breed }}</li>
+					<li>Old price: {{ pet.old_price }}</li>
+					<li>Price: {{ pet.price }}</li>
+					<li>Quantity: {{ pet.quantity }}</li>
+					<li><img src="{{ pet.image.url }}" /></li>
+					
+					<br/>
+
+					<li><h5>{{ pet.seller }}</h5></li>
+
+					<li>Description: </li>
+					<p>{{ pet.description }}</p>
+
+					<br/>
+
+					<li>Age: </li>
+					<li>Height:</li>
+					<li>Size:</li>
+				</ul>
+
+				
+			</div>
+		</div>
+	</div>
+
+{% endblock %}

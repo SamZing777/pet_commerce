@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}
+	All Pets
+{% endblock %}
+
+
+
+{% block body %}
+	<h2> All Pets Here </h2>
+
+	<div class="container">
+		<div class="row">
+
+			{% for pet in pets %}
+			<div class="col col-sm">
+				<a href="{% url 'pet-detail' pet.slug %}"> 
+					<h5> {{ pet.name }} </h5> 
+					<img src="{{ pet.image.url }}" />
+				</a>
+
+				<p>Breed: {{ pet.breed }}</p>
+				<p>Old price: <strike><i>{{ pet.old_price }}</i></strike></p>
+				<p>Price: {{ pet.price }}</p>
+				<p>Quantity: {{ pet.quantity }}</p>
+
+				<h6> Seller: {{ pet.seller }} </h6> <br/>
+				
+			</div>
+			{% endfor %}
+
+		</div>
+	</div>
+
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}
+	Update {{ pet }}
+{% endblock %}
+
+
+
+{% block body %}
+	<h2> Update {{ pet }}</h2>
+
+	<div class="container">
+		<div class="row">
+			<div class="col col-sm">
+
+				<form method="POST" enctype="form/multipart">
+					{% csrf_token %}
+					{{ form }}
+					<input type="submit" value="Update" class="btn btn-info">
+				</form>
+		
+			</div>
+		</div>
+	</div>
+
+{% endblock %}
